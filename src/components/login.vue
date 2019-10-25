@@ -1,7 +1,7 @@
 <template>
   <div id="login">
     <el-card class="box-card">
-      <div class="text item">
+      <div class="text_item">
         <el-image class="logo_img" :src="login_assets.url" :fit="login_assets.fits"></el-image>
         <p class="title">{{msg}}后台管理系统</p>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="70px" class="ruleForm">
@@ -9,7 +9,7 @@
             <el-input v-model="ruleForm.name"></el-input>
           </el-form-item>
           <el-form-item label="密码" prop="password">
-            <el-input v-model="ruleForm.password"></el-input>
+            <el-input type="password" v-model="ruleForm.password"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>

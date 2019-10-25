@@ -5,10 +5,13 @@
         :default-active="active"
         class="el-menu-vertical"
         @open="handleOpen"
-        @close="handleClose">
+        @close="handleClose"
+        background-color="#545c64"
+        text-color="#fff"
+        active-text-color="#ffd04b">
         <el-menu-item index="/brief" @click="jump('/brief')">
-            <i class="el-icon-orange"></i>
-            <span slot="title">简述</span>
+          <i class="el-icon-orange"></i>
+          <span slot="title">简述</span>
         </el-menu-item>
         <el-submenu index="account">
           <template slot="title">
@@ -34,8 +37,10 @@
             <i class="el-icon-s-grid"></i><span>表格</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="/exportForm" @click="jump('/exportForm')"><i class="el-icon-download"></i>导出表格</el-menu-item>
-            <el-menu-item index="/uploadForm" @click="jump('/uploadForm')"><i class="el-icon-edit-outline"></i>解析表格</el-menu-item>
+            <el-menu-item index="/exportForm" @click="jump('/exportForm')"><i class="el-icon-download"></i>导出表格
+            </el-menu-item>
+            <el-menu-item index="/uploadForm" @click="jump('/uploadForm')"><i class="el-icon-edit-outline"></i>解析表格
+            </el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="echarts">
@@ -66,22 +71,22 @@
             handleClose(key, keyPath) {
                 console.log(key, keyPath);
             },
-            jump(href){
+            jump(href) {
                 this.$router.push(href);
             }
         },
 
-        watch:{
+        watch: {
             $route(to, from) {
                 this.active = this.$route.path;
             }
         },
-        created(){
+        created() {
 
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 
 </style>

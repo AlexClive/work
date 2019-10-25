@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-     <div v-html="msg"></div>
+<!--     <div v-html="msg"></div>-->
     <RichText v-model="msg" :disabled="disabled" @onClick="onClick" ref="editor"></RichText>
   </div>
 </template>

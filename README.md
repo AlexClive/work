@@ -2,7 +2,7 @@
 
 > A Vue.js project
 
-## Build Setup
+## 构建设置
 
 ``` bash
 # install dependencies
@@ -22,9 +22,10 @@ npm run unit
 
 # run e2e tests
 npm run e2e
+运行后再文件夹reports中会有截图 其中因为Chrome的安装版本高webpack中安装的Chrome驱动的版本所以e2e在Chrome中无法运行
 
 # run all tests
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+有关工作原理的详细说明，请查看[guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

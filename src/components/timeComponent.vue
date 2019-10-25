@@ -38,11 +38,7 @@
         name: "timeComponent",
         data() {
             return {
-                task: {
-                    "2019-09-24": 'ok',
-                    "2019-10-24": 'ok',
-                    "2019-10-25": "事件"
-                },
+                task: {},
                 addTime: '',
                 eventContent: ''
             }
@@ -61,9 +57,17 @@
                 this.addTime = this.GMTToStr(this.addTime);
                 this.task[this.addTime] = this.eventContent;
                 let arr = Object.keys(this.task);
+                //发送信息给服务端
+                this.$socket.emit('send',this.task);
                 //通知数据发生了改变
                 this.$set(this.task, arr.length, this.task[this.addTime]);
             }
+        },
+        created() {
+            //接收服务端的信息
+            this.sockets.subscribe('getMsg', (data) => {
+               this.task = data
+            })
         }
     }
 </script>

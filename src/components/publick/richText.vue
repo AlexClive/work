@@ -55,7 +55,7 @@
                     language: 'zh_CN',
                     skin_url: "../../../static/utils/tinymce/skins/ui/oxide",
                     content_css: "../../../static/utils/tinymce/skins/content/default/content.css",
-                    min_height: 300,
+                    min_height: 600,
                     plugins: this.plugins,
                     toolbar1: 'Edit undo redo | cut copy paste | selectall | searchreplace |  Insert image link media template codesample inserttable | forecolor backcolor | removeformat|subscript superscript|bullist numlist|link unlink openlink|charmap|fullscreen',
                     toolbar2: 'styleselect|View code visualaid visualchars visualblocks|Format bold italic underline strikethrough superscript subscript codeformat  | spellchecker | preview fullscreen| formats blockformats fontformats fontsizes align  | Table inserttable tableprops deletetable row column cell | Tools spellchecker spellcheckerlanguage | code wordcount',
