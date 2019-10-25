@@ -45,7 +45,7 @@ const routes = new Router({
       path: '/modifyAvatar',
       name: 'modifyAvatar',
       component: resolve => require(['@/components/userInfo/modifyAvatar'], resolve)
-    },{
+    }, {
       path: '/timeComponent',
       name: 'timeComponent',
       component: resolve => require(['@/components/timeComponent'], resolve)
@@ -53,11 +53,18 @@ const routes = new Router({
       path: '/richText',
       name: 'richText',
       component: resolve => require(['@/components/index'], resolve)
-    },
-    , {
+    }, {
       path: '/exportForm',
       name: 'exportForm',
       component: resolve => require(['@/components/table/exportForm'], resolve)
+    },{
+      path: '/uploadForm',
+      name: 'uploadForm',
+      component: resolve => require(['@/components/table/uploadForm'], resolve)
+    },{
+      path: '/count',
+      name: 'count',
+      component: resolve => require(['@/components/echarts/count'], resolve)
     },
   ]
 });

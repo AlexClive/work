@@ -35,8 +35,15 @@
           </template>
           <el-menu-item-group>
             <el-menu-item index="/exportForm" @click="jump('/exportForm')"><i class="el-icon-download"></i>导出表格</el-menu-item>
-            <el-menu-item index="/uploadForm" @click="jump('/uploadForm')"><i class="el-icon-upload"></i>上传表格</el-menu-item>
-            <el-menu-item index="/consolidatedStatistics" @click="jump('/consolidatedStatistics')"><i class="el-icon-document-add"></i>合并统计</el-menu-item>
+            <el-menu-item index="/uploadForm" @click="jump('/uploadForm')"><i class="el-icon-edit-outline"></i>解析表格</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
+        <el-submenu index="echarts">
+          <template slot="title">
+            <i class="el-icon-s-grid"></i><span>可视化</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="/count" @click="jump('/count')"><i class="el-icon-finished"></i>数据统计</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
