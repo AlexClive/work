@@ -8,7 +8,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import store from "./store";
 import VueSocketIO from 'vue-socket.io'
-
+import '../src/assets/icon/style.css'
 Vue.config.productionTip = false;
 //初始化elementUI
 Vue.use(ElementUI);

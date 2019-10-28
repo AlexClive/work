@@ -1,0 +1,86 @@
+{
+  "id": "1479066",
+  "name": "sic",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "657339",
+      "name": "分期－时间",
+      "font_class": "shijian",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "1766498",
+      "name": "符号-树形控件",
+      "font_class": "shuxingkongjian",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "1828470",
+      "name": "账号管理",
+      "font_class": "accountnum",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "2471358",
+      "name": "富文本框",
+      "font_class": "fuwenbenkuang",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "3005918",
+      "name": "选题-内容简述",
+      "font_class": "xuanti-neirongjianshu",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "5203271",
+      "name": "锚点",
+      "font_class": "maodian",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "6095690",
+      "name": "减",
+      "font_class": "jian",
+      "unicode": "e6d4",
+      "unicode_decimal": 59092
+    },
+    {
+      "icon_id": "6095691",
+      "name": "加",
+      "font_class": "jia",
+      "unicode": "e6d5",
+      "unicode_decimal": 59093
+    },
+    {
+      "icon_id": "6246309",
+      "name": "组件",
+      "font_class": "zujian",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "9626834",
+      "name": "表格",
+      "font_class": "biaoge",
+      "unicode": "e866",
+      "unicode_decimal": 59494
+    },
+    {
+      "icon_id": "9833348",
+      "name": "可视化管理",
+      "font_class": "keshihuaguanli",
+      "unicode": "e91c",
+      "unicode_decimal": 59676
+    }
+  ]
+}

@@ -65,6 +65,14 @@ const routes = new Router({
       path: '/count',
       name: 'count',
       component: resolve => require(['@/components/echarts/count'], resolve)
+    },{
+      path: '/treeShape',
+      name: 'treeShape',
+      component: resolve => require(['@/components/module/treeShape'], resolve)
+    },{
+      path: '/anchor',
+      name: 'anchor',
+      component: resolve => require(['@/components/module/anchor'], resolve)
     },
   ]
 });
