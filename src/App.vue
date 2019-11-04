@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
-    <Header v-show="isHidden != this.$store.state.isHidden"></Header>
-    <RowNav v-show="isHidden != this.$store.state.isHidden"></RowNav>
-    <el-col :span="21">
-    <router-view/>
-    </el-col>
-  </div>
+    <div id="app">
+      <Header v-show="isHidden != this.$store.state.isHidden"></Header>
+      <RowNav v-show="isHidden != this.$store.state.isHidden"></RowNav>
+      <el-col :span="21">
+        <router-view/>
+      </el-col>
+    </div>
 </template>
 
 <script>
@@ -25,7 +25,7 @@
         },
         created() {
             if (sessionStorage.getItem("isHidden")) {
-                this.$store.commit('Hidden',true);
+                this.$store.commit('Hidden', true);
             }
         }
     }

@@ -4,7 +4,8 @@
       <el-calendar>
         <template
           slot="dateCell"
-          slot-scope="{date, data}">
+          slot-scope="{date, data}"
+          @click="timenew()">
           <div>
             {{ data.day.split('-').slice(1).join('-') }}
             <p>{{task[data.day]}}</p>
@@ -61,6 +62,9 @@
                 this.$socket.emit('send',this.task);
                 //通知数据发生了改变
                 this.$set(this.task, arr.length, this.task[this.addTime]);
+            },
+            timenew(){
+
             }
         },
         created() {

@@ -1,6 +1,6 @@
 <template>
     <div id="treeShape">
-      <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+      <el-tree :data="data" :props="defaultProps" accordion @node-click="handleNodeClick"></el-tree>
     </div>
 </template>
 
@@ -47,22 +47,25 @@
     }
 </script>
 
-<style>
-   .el-tree-node__expand-icon.expanded {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+<style lang="less">
+  #treeShape{
+    .el-tree-node__expand-icon.expanded {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    .el-icon-caret-right:before {
+      content: "\e6d9";
+      font-size: 18px;
+      border: 1px solid #cccccc;
+    }
+    .el-tree-node__expand-icon.expanded.el-icon-caret-right:before {
+      content: "\e6d8";
+      font-size: 18px;
+      border: 1px solid #cccccc;
+    }
+    .el-tree-node__expand-icon.is-leaf:before{
+      border: 0;
+    }
   }
-   .el-icon-caret-right:before {
-    content: "\e6d9";
-    font-size: 18px;
-     border: 1px solid #cccccc;
-  }
-   .el-tree-node__expand-icon.expanded.el-icon-caret-right:before {
-    content: "\e6d8";
-    font-size: 18px;
-     border: 1px solid #cccccc;
-  }
-   .el-tree-node__expand-icon.is-leaf:before{
-     border: 0;
-   }
+
 </style>

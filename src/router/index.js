@@ -46,10 +46,6 @@ const routes = new Router({
       name: 'modifyAvatar',
       component: resolve => require(['@/components/userInfo/modifyAvatar'], resolve)
     }, {
-      path: '/timeComponent',
-      name: 'timeComponent',
-      component: resolve => require(['@/components/timeComponent'], resolve)
-    }, {
       path: '/richText',
       name: 'richText',
       component: resolve => require(['@/components/index'], resolve)
@@ -66,6 +62,10 @@ const routes = new Router({
       name: 'count',
       component: resolve => require(['@/components/echarts/count'], resolve)
     },{
+      path: '/Gallery',
+      name: 'Gallery',
+      component: resolve => require(['@/components/echarts/Gallery'], resolve)
+    },{
       path: '/treeShape',
       name: 'treeShape',
       component: resolve => require(['@/components/module/treeShape'], resolve)
@@ -73,6 +73,14 @@ const routes = new Router({
       path: '/anchor',
       name: 'anchor',
       component: resolve => require(['@/components/module/anchor'], resolve)
+    }, {
+      path: '/timeComponent',
+      name: 'timeComponent',
+      component: resolve => require(['@/components/module/timeComponent'], resolve)
+    }, {
+      path: '/code',
+      name: 'code',
+      component: resolve => require(['@/components/module/code'], resolve)
     },
   ]
 });
