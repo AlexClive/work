@@ -9,6 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 import store from "./store";
 import VueSocketIO from 'vue-socket.io'
 import '../src/assets/icon/style.css'
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-dark.css'
+
 Vue.config.productionTip = false;
 //初始化elementUI
 Vue.use(ElementUI);
@@ -19,6 +22,14 @@ Vue.use(new VueSocketIO({
   vuex: {
   }
 }));
+//自定义一个代码高亮指令
+Vue.directive('highlight', function (el) {
+  let highlight = el.querySelectorAll('pre code');
+  highlight.forEach((block)=>{
+    console.log(block)
+    hljs.initHighlightingOnLoad(block);
+  })
+});
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

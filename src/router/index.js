@@ -81,6 +81,10 @@ const routes = new Router({
       path: '/code',
       name: 'code',
       component: resolve => require(['@/components/module/code'], resolve)
+    },{
+      path: '/PDF',
+      name: 'PDF',
+      component: resolve => require(['@/components/module/PDF'], resolve)
     },
   ]
 });

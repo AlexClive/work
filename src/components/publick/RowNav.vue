@@ -2,80 +2,22 @@
   <div id="RowNav">
     <el-col :span="3">
       <el-scrollbar wrapClass="yf-container" viewClass="yf-content" wrapStyle="color:'#fff';fontSize:'16px';" viewStyle="color:'#fff';fontSize:'16px';" :native="false" :noresize="true" tag="ul">
-<!--
-        <el-menu :default-active="active" class="el-menu-vertical" @open="handleOpen" @close="handleClose" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" :style="height">
-          <el-menu-item index="/brief" @click="jump('/brief')">
-            <i class="iconfont">&#xe681;</i>
-            <span slot="title">简述</span>
-          </el-menu-item>
-          <el-submenu index="account">
-            <template slot="title">
-              <i class="iconfont">&#xe666;</i><span>账号管理</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/personalInformation" @click="jump('/personalInformation')">个人资料</el-menu-item>
-              <el-menu-item index="/changePassword" @click="jump('/changePassword')">修改密码</el-menu-item>
-              <el-menu-item index="/adminManagement" @click="jump('/adminManagement')">管理员管理</el-menu-item>
-              <el-menu-item index="/userManagement" @click="jump('/userManagement')">用户管理</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-menu-item index="/richText" @click="jump('/richText')">
-            <i class="iconfont">&#xe66f;</i>
-            <span slot="title">富文本</span>
-          </el-menu-item>
-          <el-submenu index="table">
-            <template slot="title">
-              <i class="iconfont">&#xe866;</i><span>表格</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/exportForm" @click="jump('/exportForm')"><i class="el-icon-download"></i>导出表格
-              </el-menu-item>
-              <el-menu-item index="/uploadForm" @click="jump('/uploadForm')"><i class="el-icon-edit-outline"></i>解析表格
-              </el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-submenu index="echarts">
-            <template slot="title">
-              <i class="iconfont">&#xe91c;</i><span>可视化</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/count" @click="jump('/count')"><i class="el-icon-finished"></i>数据统计</el-menu-item>
-            </el-menu-item-group>      <el-menu-item-group>
-              <el-menu-item index="/Gallery" @click="jump('/Gallery')"><i class="el-icon-finished"></i>Gallery</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-submenu index="module">
-            <template slot="title">
-              <i class="iconfont">&#xe652;</i><span>组件</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/treeShape" @click="jump('/treeShape')"><i class="iconfont">&#xe69b;</i>树形结构
-              </el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group>
-              <el-menu-item index="/anchor" @click="jump('/anchor')"><i class="iconfont">&#xe62b;</i>锚点定位</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group>
-              <el-menu-item index="/timeComponent" @click="jump('/timeComponent')"><i class="iconfont">&#xe651;</i>时间组件</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-        </el-menu>
--->
         <el-menu :default-active="active" class="el-menu-vertical" @open="handleOpen" @close="handleClose" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" :style="height">
           <div  v-for="(item,key) in directory" :key="key">
             <el-menu-item
               v-if="item.child===false"
               :index="item.path" @click="jump(item.path)">
-              <i class="iconfont">&#xe681;</i>
+              <i class="iconfont" v-html="item.text"></i>
               <span slot="title">{{item.title}}</span>
             </el-menu-item>
             <el-submenu
               v-if="item.child!==false" :index="item.path">
               <template slot="title">
-                <i class="iconfont">&#xe666;</i><span>{{item.title}}</span>
+                <i class="iconfont" v-html="item.text"></i><span>{{item.title}}</span>
               </template>
               <el-menu-item-group >
-                <el-menu-item v-for="(Citem,Ckey) in item.child" :key="Ckey" :index="Citem.path" @click="jump(Citem.path)">{{Citem.title}}</el-menu-item>
+                <el-menu-item v-for="(Citem,Ckey) in item.child" :key="Ckey" :index="Citem.path" @click="jump(Citem.path)">
+                  <i class="iconfont" v-html="Citem.text"></i><span>{{Citem.title}}</span></el-menu-item>
               </el-menu-item-group>
             </el-submenu>
           </div>
@@ -94,20 +36,52 @@
             return {
                 directory:[
                     {
-                        title:'简述',path:"/brief",child:false
+                        title:'简述',path:"/brief",child:false,text:'&#xe681;'
                     },
                     {
-                        title:"账户管理", path:"/account", child: [
+                        title:"账户管理", path:"/account",text:'&#xe666;', child: [
                             {
                                 title:"个人资料",
-                                path:"/personalInformation"
+                                path:"/personalInformation",text:''
                             },   {
                                 title:"修改密码",
-                                path:"/changePassword"
+                                path:"/changePassword",text:''
+                            },   {
+                                title:"管理员管理",
+                                path:"/adminManagement",text:''
+                            },   {
+                                title:"用户管理",
+                                path:"/userManagement",text:''
                             }
                         ]
                     },{
                         title:'富文本',path:"/richText",child:false
+                    },{
+                        title:"表格", path:"/table",text:'&#xe866;', child:[
+                            {
+                                title:"导出表格", path:"/exportForm",text:''
+                            },{
+                                title:"解析表格", path:"/uploadForm",text:''
+                            }
+                        ]
+                    },{
+                    title:'可视化',path:"/echarts",text:'&#xe91c;',child:[
+                            {
+                                title:"数据统计", path:"/count",text:''
+                            },{
+                                title:"Gallery", path:"/Gallery",text:''
+                            }
+                        ]
+                    },{
+                        title:'组件',path:"/module",text:'&#xe652;',child:[
+                            {
+                                title:"树形结构", path:"/treeShape",text:'&#xe69b;'
+                            },{
+                                title:"锚点定位", path:"/anchor",text:'&#xe62b;'
+                            },{
+                                title:"时间组件", path:"/timeComponent",text:'&#xe651;'
+                            }
+                        ]
                     }
                 ],
                 height: {
